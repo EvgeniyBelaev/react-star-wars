@@ -1,10 +1,12 @@
+import style from './App.module.css';
+import { getApiResurse } from '../../utils/network'
 
-import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <h1>Hello</h1>
+    <h1 className={style.header}>Hello</h1>
   );
 }
 
 export default App;
+
