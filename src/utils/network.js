@@ -1,4 +1,9 @@
+import { HTTP, HTTPS } from '@constants/api'
 
+export const changeHTTP = url => {
+    const result = url ? url.replace(HTTP, HTTPS) : url
+    return result
+}
 
 export const getApiResurse = async (url) => {
     try {
@@ -17,6 +22,8 @@ export const getApiResurse = async (url) => {
     }
 
 }
+
+
 
 // getApiResurse(SWAPI_ROOT + SWAPI_PEOPLE) 
 //     .then(body => console.log(body))

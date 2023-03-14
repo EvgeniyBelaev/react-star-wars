@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ErrorMessage from "@components/ErrorMessage/ErrorMesage"
 
 export const withErrorApi = View => {
     
@@ -8,7 +9,7 @@ export const withErrorApi = View => {
         return (
             <>
             {errorApi
-                ? <h2>Error</h2>
+                ? <ErrorMessage />
                 : (
                         <View 
                             setErrorApi={setErrorApi}
@@ -17,7 +18,7 @@ export const withErrorApi = View => {
                 )
             }
             
-        </>
+            </>
         )
     }
 }
