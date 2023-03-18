@@ -10,6 +10,13 @@
     transition: var(--transition);
     cursor: pointer;
 }
+.button:disabled,
+.button:disabled:hover {
+    color: var(--color-gray);
+    background-color: transparent;
+    border-color: var(--color-gray);
+    cursor: auto;
+}
 .dark {
     border: 1px solid var(--color-white);
     color: var(--color-white);
@@ -23,6 +30,6 @@
     color: var(--color-black);
 }
 .light:hover {
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-black);
     color: var(--color-white);
 }
