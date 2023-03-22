@@ -6,6 +6,7 @@
   --color-blue: #6a83fb;
   --color-violet: #ae72c2;
 
+  --spacing-utrasmall: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
@@ -14,6 +15,8 @@
   --transition: .4s;
   --font-family-main: sans-serif;
 
+  --margin-list: 7px;
+
   --width-max: 1200px;
 
   --font-size-header: 26px;
@@ -21,6 +24,7 @@
   --font-size-main: 16px;
 
   --border-radius-small: 3px;
+  --border-radius-medium: 5px;
 
   --text-swadow-yellow:
     0 0 2px var(--color-white),
