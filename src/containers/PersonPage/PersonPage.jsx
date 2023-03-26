@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonPhoto from '@components/PersonPage/PersonPhoto'
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack/PersonLinkBack';
+import PersonFilms from '@components/PersonPage/PersonFilms/PersonFilms';
 
 import { getApiResurse } from '@utils/network'
 import { getPeopleImage } from '@services/getPeopleData'
@@ -16,6 +18,7 @@ const PersonPage = ({setErrorApi}) => {
     const [personInfo, setPersonInfo] = useState(null)
     const [personName, setPersonName] = useState(null)
     const [personPhoto, setPersonPhoto] = useState(null)
+    const [personFilms, setPersonFilms] = useState(null)
 
     const {id} = useParams()
 
@@ -36,6 +39,8 @@ const PersonPage = ({setErrorApi}) => {
                 setPersonName(res.name)
                 setPersonPhoto(getPeopleImage(id))
 
+                res.films.lenght && setPersonFilms(res.films)
+
                 setErrorApi(false)
             } else {
                 setErrorApi(true)
@@ -45,6 +50,7 @@ const PersonPage = ({setErrorApi}) => {
 
     return (
         <>
+            <PersonLinkBack />
             <div className={style.wrapper}>
                 <span className={style.person__name}>{personName}</span>
                 
@@ -55,6 +61,8 @@ const PersonPage = ({setErrorApi}) => {
                     />
 
                     {personInfo && <PersonInfo personInfo={personInfo} />}
+
+                    {personFilms && <PersonFilms personFilms={personFilms} />}
                 </div>
 
             </div>
