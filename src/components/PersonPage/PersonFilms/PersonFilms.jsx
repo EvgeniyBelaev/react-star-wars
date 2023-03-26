@@ -19,14 +19,14 @@ const PersonFilms = ({personFilms}) => {
 
     return (
         <div className={style.wrapper}>
-            <ul className={style.container}>
+            <ul className={style.list__container}>
                 {filmsName
                     .sort((a, z) => a.episode_id - z.episode_id)
                     .map(({title, episode_id}) =>
-                    <li key={episode_id}>
-                        <span>Episode {episode_id}</span>
-                        <span>:</span>
-                        <span>{title}</span>
+                    <li className={style.list__item} key={episode_id}>
+                        <span className={style.item__episode}>Episode {episode_id}</span>
+                        <span className={style.item__colon}>:</span>
+                        <span className={style.item__title}>{title}</span>
                     </li> 
                     )
                 }
