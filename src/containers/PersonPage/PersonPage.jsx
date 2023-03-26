@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonPhoto from '@components/PersonPage/PersonPhoto'
-import PersonLinkBack from '@components/PersonPage/PersonLinkBack/PersonLinkBack';
-import PersonFilms from '@components/PersonPage/PersonFilms/PersonFilms';
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
+import PersonFilms from '@components/PersonPage/PersonFilms';
 
 import { getApiResurse } from '@utils/network'
 import { getPeopleImage } from '@services/getPeopleData'
@@ -39,7 +39,8 @@ const PersonPage = ({setErrorApi}) => {
                 setPersonName(res.name)
                 setPersonPhoto(getPeopleImage(id))
 
-                res.films.lenght && setPersonFilms(res.films)
+
+                res.films.length && setPersonFilms(res.films)
 
                 setErrorApi(false)
             } else {
@@ -63,6 +64,7 @@ const PersonPage = ({setErrorApi}) => {
                     {personInfo && <PersonInfo personInfo={personInfo} />}
 
                     {personFilms && <PersonFilms personFilms={personFilms} />}
+                    
                 </div>
 
             </div>
