@@ -33,7 +33,6 @@ ChooseSideItem.propTypes = {
     img: PropTypes.string
 }
 
-
 const ChooseSide = () => {
     const elements = [
         {
