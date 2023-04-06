@@ -10,26 +10,6 @@ import imgNeitral from './img/neitral.svg'
 import style from './Header.module.css';
 
 const Header = () => {
-    const [icon, setIcon] = useState(imgNeitral)
-    const isTheme = useTheme()
-    
-    useEffect(() => {
-        switch (isTheme.theme) {
-            case THEME_LIGHT:
-                setIcon(imgLight)
-                break;
-            case THEME_DARK:
-                setIcon(imgDark)
-                break;
-            case THEME_NEITRAL:
-                setIcon(imgNeitral)
-                break;
-        
-            default: setIcon(imgNeitral)
-
-        }
-    }, [isTheme])
-
     return (
         <div className={style.container}>
             <img src={icon} alt="logo" className={style.logo} />
