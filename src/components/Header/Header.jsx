@@ -12,6 +12,7 @@ import style from './Header.module.css';
 const Header = () => {
     const [icon, setIcon] = useState(imgNeitral)
     const isTheme = useTheme()
+    
     useEffect(() => {
         switch (isTheme.theme) {
             case THEME_LIGHT:
