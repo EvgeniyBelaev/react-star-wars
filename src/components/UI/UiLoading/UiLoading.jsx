@@ -7,6 +7,7 @@ import loaderWhite from './img/Loader-white.svg'
 import loaderBlue from './img/Loader-blue.svg'
 
 import style from './UiLoading.module.css';
+import '../index.css'
 
 const UiLoading = ({
     theme = 'white',

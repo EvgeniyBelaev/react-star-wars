@@ -1,0 +1,9 @@
+.input {
+    min-width: 300px;
+    padding: 10px 15px;
+    border: 3px solid var(--color-lightgray);
+    border-radius: 3px;
+    font-size: var(--font-size-medium);
+    font-family: var(--font-family-main);
+    outline: none;
+}
