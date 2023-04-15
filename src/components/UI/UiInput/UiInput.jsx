@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames'
+import icon from './img/cancel.svg'
+
 import '../index.css'
+
 
 import style from './UiInput.module.css';
 
@@ -18,6 +21,12 @@ const UiInput = ({
                 onChange={(e) => handleInputChange(e.target.value)}
                 placeholder={placeholder}
                 className={style.input}
+            />
+            <img
+                onClick={() => value && handleInputChange('')} 
+                src={icon} 
+                className={cn(style.clear, !value && style.clear__disabled)}
+                alt="cancel" 
             />
         </div>
     );
