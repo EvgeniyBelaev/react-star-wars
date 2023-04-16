@@ -12,6 +12,10 @@
     -webkit-text-stroke-width: .5px;
     -webkit-text-fill-color: transparent;
 }
-/* .video {
-    
-} */
+.video {
+    display: block;
+    margin: auto;
+    margin-top: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-white);
+}

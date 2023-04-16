@@ -13,7 +13,7 @@ const ErrorMessage = () => {
                 Come back when we fix everything
             </p>
 
-            <UiVudeo src={video} classes={style.video} />
+            <UiVudeo src={video} classes={style.video} playbackRate={1} />
         </>
     );
 }

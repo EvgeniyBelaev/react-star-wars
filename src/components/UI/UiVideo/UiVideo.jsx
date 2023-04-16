@@ -1,16 +1,26 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames'
 import style from './UiVideo.module.css';
+import { useEffect, useRef } from 'react';
 
 const UiVideo = ({
     src,
     playbackRate=1.0,
     classes
 }) => {
+    const videoRef = useRef(null)
+
+    useEffect(() => {
+        videoRef.current.playbackRate = playbackRate
+    }, [])
+
     return (
         <video 
+            loop
+            autoPlay
+            muted
             className={cn(style.video, classes)}
-            playbackRate={playbackRate}
+            ref={videoRef}
         >
             <source src={src} />
         </video>
