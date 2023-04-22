@@ -4,6 +4,7 @@ import HomePage from '@containers/HomePage';
 import NotFoundPage from '@containers/NotFoundPage';
 import FavoritesPage from '@containers/FavoritesPage'
 import SearchPage from '@containers/SearchPage'
+import StarshipsPage from '@containers/StarshipsPage'
 
 import ErrorMessage from '@components/ErrorMessage';
 
@@ -20,6 +21,14 @@ const routesConfig =[
         path: '/people/:id',
         element: <PersonPage/>
     },
+    {
+        path: '/starships',
+        element: <StarshipsPage/>
+    },
+    // {
+    //     path: '/starships/:id',
+    //     element: <StarshipPage/>
+    // },
     {
         path: '/favorites',
         element: <FavoritesPage/>
