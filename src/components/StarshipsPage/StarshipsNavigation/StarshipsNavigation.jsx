@@ -10,6 +10,7 @@ const StarshipsNavigation = ({
     nextPage, 
     counterPage
 }) => {
+
     const handleChangeNext = () => getResurse(nextPage)
     const handleChangePrev = () => getResurse(prevPage)
 
@@ -33,7 +34,6 @@ const StarshipsNavigation = ({
         </div>
     );
 }
-
 
 StarshipsNavigation.propTypes = {
     getResurse: PropTypes.func,

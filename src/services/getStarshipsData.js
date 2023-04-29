@@ -9,18 +9,18 @@ const checkProtocol = url => {
 }
 
 export const getStarshipsPageId = url => {
-    const pos = url.lastIndexof(SWAPI_PARAM_PAGE)
+    const pos = url.lastIndexOf(SWAPI_PARAM_PAGE)
     const id = url.slice(pos + SWAPI_PARAM_PAGE.length, url.length)
 
     return Number(id)
 }
 
-const getId = (url, cetegory) => {
+const getId = (url, category) => {
     const protocol = checkProtocol(url)
 
     const id = url
-        .replace(protocol + SWAPI_ROOT + cetegory, '')
-        .replace(/\//g,'')
+        .replace(protocol + SWAPI_ROOT + category, '')
+        .replace(/\//g, '')
         return id
 }
 

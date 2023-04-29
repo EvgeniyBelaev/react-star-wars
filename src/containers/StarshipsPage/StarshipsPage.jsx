@@ -24,9 +24,9 @@ const StarshipsPage = ({setErrorApi}) => {
     const query = useQueryParams()
     const queryPage = query.get('page')
 
-    const getResourse = async (url) => {
+    const getResurse = async (url) => {
         const res = await getApiResurse(url)
-
+        
         if (res) {
             const starshipsList = res.results.map(({name, url}) => {
                 const id = getStarshipsId(url)
@@ -49,14 +49,14 @@ const StarshipsPage = ({setErrorApi}) => {
     }
 
     useEffect(() => {
-        getResourse(API_STARSHIPS + queryPage)
-    }, [])
+        getResurse(API_STARSHIPS + queryPage)
+    },[])
 
 
     return (
         <>
             <StarshipsNavigation 
-                getApiResurse = {getResourse}
+                getResurse = {getResurse}
                 prevPage = {prevPage}
                 nextPage = {nextPage}
                 counterPage = {counterPage}
