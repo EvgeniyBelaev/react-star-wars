@@ -1,5 +1,6 @@
 export const HTTPS = 'https://'
 export const HTTP = 'http://'
+export const CATEGOTY_LIST = ['people', 'starships', 'vehicles', 'planets', 'species']
 
 export const SWAPI_ROOT = 'swapi.dev/api/'
 export const SWAPI_PEOPLE = 'people'
@@ -17,10 +18,11 @@ export const API_SHIP = HTTPS + SWAPI_ROOT + SWAPI_STARSHIPS
 export const API_SEARCH = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE + SWAPI_PARAM_SEARCH
 export const API_SEARCH_SHIP = HTTPS + SWAPI_ROOT + SWAPI_STARSHIPS + SWAPI_PARAM_SEARCH
 
-const GUIDE_ROOT_IMG = 'https://starwars-visualguide.com/assets/img/';
+export const GUIDE_ROOT_IMG = 'https://starwars-visualguide.com/assets/img/';
 const GUIDE_PEOPLE = 'characters';
 const GUIDE_STARSHIPS = 'starships';
 export const GUIDE_IMG_EXTENSION = '.jpg';
 
 export const URL_IMG_PERSON = GUIDE_ROOT_IMG+GUIDE_PEOPLE;
 export const URL_IMG_SHIP = GUIDE_ROOT_IMG+GUIDE_STARSHIPS;
+

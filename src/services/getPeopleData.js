@@ -1,4 +1,4 @@
-import {HTTP, HTTPS, SWAPI_ROOT, SWAPI_PEOPLE, GUIDE_IMG_EXTENSION, URL_IMG_PERSON, SWAPI_PARAM_PAGE} from '@constants/api'
+import {HTTP, HTTPS, SWAPI_ROOT, SWAPI_PEOPLE, GUIDE_IMG_EXTENSION, URL_IMG_PERSON, SWAPI_PARAM_PAGE, GUIDE_ROOT_IMG} from '@constants/api'
 
 const checkProtocol = url => {
     if (url.indexOf(HTTPS) !== -1) {
@@ -24,6 +24,13 @@ const getId = (url, category) => {
         return id
 }
 
-export const getPeopleId = url => getId(url, SWAPI_PEOPLE)
+export const getPeopleId = (url, category) => getId(url, `${category}`)
 
-export const getPeopleImage = id => `${URL_IMG_PERSON}/${id + GUIDE_IMG_EXTENSION}`
+export const getPeopleImage = (id, category) =>{ 
+    if (category === 'people') {
+        return `${URL_IMG_PERSON}/${id + GUIDE_IMG_EXTENSION}`
+    } else {
+        return `${GUIDE_ROOT_IMG}`+`${category}`+`/${id + GUIDE_IMG_EXTENSION}`
+    }
+
+}

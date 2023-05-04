@@ -8,7 +8,8 @@ const PeopleNavigation = ({
     getResurse,
     prevPage, 
     nextPage, 
-    counterPage
+    counterPage,
+    category
 }) => {
 
     const handleChangeNext = () => getResurse(nextPage)
@@ -16,7 +17,7 @@ const PeopleNavigation = ({
 
     return (
         <div className={style.container}>
-            <Link to={`/people/?page=${counterPage - 1}`} className={style.buttons}>
+            <Link to={`/${category}/?page=${counterPage - 1}`} className={style.buttons}>
                 <UiButton 
                     text = "Previous"
                     onClick = {handleChangePrev} 
@@ -24,7 +25,7 @@ const PeopleNavigation = ({
                     
                 />
             </Link>
-            <Link to={`/people/?page=${counterPage + 1}`} className={style.buttons}>
+            <Link to={`/${category}/?page=${counterPage + 1}`} className={style.buttons}>
                 <UiButton 
                     text = "Next"
                     onClick = {handleChangeNext} 
@@ -39,7 +40,8 @@ PeopleNavigation.propTypes = {
     getResurse: PropTypes.func,
     prevPage: PropTypes.string,
     nextPage: PropTypes.string,
-    counterPage: PropTypes.number
+    counterPage: PropTypes.number,
+    category: PropTypes.string
 }
 
 

@@ -6,12 +6,12 @@ import PeopleList from '@components/PeoplePage/PeopleList';
 import PeopleNavigation from '@components/PeoplePage/PeopleNavigation'
 import { getApiResurse, changeHTTP } from '@utils/network';
 import { getPeopleId, getPeopleImage, getPeoplePageId } from '@services/getPeopleData';
-import { API_PEOPLE } from '@constants/api'
+import { HTTPS, SWAPI_ROOT, SWAPI_PARAM_PAGE } from '@constants/api'
 import { useQueryParams } from '@hooks/useQueryParams';
 
 import style from './PeoplePage.module.css';
 
-const PeoplePage = ({setErrorApi}) => {
+const PeoplePage = ({setErrorApi, category}) => {
     const [people, setPeople] = useState(null)
     const [prevPage, setPrevPage] = useState(null)
     const [nextPage, setNextPage] = useState(null)
@@ -26,9 +26,9 @@ const PeoplePage = ({setErrorApi}) => {
 
         if (res) {
             const peopleList = res.results.map(({name, url}) => {
-                const id = getPeopleId(url)
-                const img = getPeopleImage(id)
-    
+                const id = getPeopleId(url, category)
+                const img = getPeopleImage(id, category)
+
     
                 return {
                     id, 
@@ -47,9 +47,8 @@ const PeoplePage = ({setErrorApi}) => {
     }
 
     useEffect(() => {
-        getResurse(API_PEOPLE + queryPage)
+        getResurse(HTTPS + SWAPI_ROOT + `${category}` + SWAPI_PARAM_PAGE + queryPage)
     },[])
-
     return (
         <>
             <PeopleNavigation 
@@ -57,14 +56,16 @@ const PeoplePage = ({setErrorApi}) => {
                 prevPage = {prevPage}
                 nextPage = {nextPage}
                 counterPage = {counterPage}
+                category={category}
             />
-            {people && <PeopleList people={people} />}
+            {people && <PeopleList people={people} category={category} />}
         </>
     );
 }
 
 PeoplePage.propTypes = {
-    setErrorApi: PropTypes.func
+    setErrorApi: PropTypes.func,
+    category: PropTypes.string
 }
 
 export default withErrorApi(PeoplePage);

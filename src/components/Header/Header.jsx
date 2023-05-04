@@ -7,6 +7,8 @@ import imgLight from './img/light.svg'
 import imgDark from './img/dark.svg'
 import imgNeitral from './img/neitral.svg'
 
+import {CATEGOTY_LIST} from '@constants/api'
+
 import style from './Header.module.css';
 
 const Header = () => {
@@ -27,8 +29,12 @@ const Header = () => {
             <img src={icon} alt="logo" className={style.logo} />
             <ul className={style.list__container}>
                 <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/people?page=1">People</NavLink></li>
-                <li><NavLink to="/starships?page=1">Starships</NavLink></li>
+                {/* <li><NavLink to="/people?page=1">People</NavLink></li> */}
+                {CATEGOTY_LIST.map((category, index) => {
+                    return (
+                        <li key={index}><NavLink to={`/${category}?page=1`}>{category}</NavLink></li>
+                    )
+                })}
                 <li><NavLink to="/not-found">Not Found</NavLink></li>
                 <li><NavLink to="/search">Search</NavLink></li>
                 <li><NavLink to="/fail">Fail</NavLink></li>

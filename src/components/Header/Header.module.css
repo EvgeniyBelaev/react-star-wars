@@ -31,6 +31,7 @@
     font-weight: var(--font-bold);
     text-shadow: var(--text-swadow-yellow);
     transition: var(--transition);
+    text-transform: capitalize;
 }
 .list__container :global(a.active) {
     border: 2px solid var(--color-violet);
