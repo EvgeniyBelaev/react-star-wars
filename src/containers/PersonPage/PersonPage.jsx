@@ -28,6 +28,7 @@ const PersonPage = ({setErrorApi, category}) => {
     const [personFilms, setPersonFilms] = useState(null)
     const [personFavorite, setPersonFavorite] = useState(false)
 
+
     const storeData = useSelector(state => state.favoriteReducer)
 
     const {id} = useParams()
@@ -104,6 +105,7 @@ const PersonPage = ({setErrorApi, category}) => {
                 setPersonPhoto(getPeopleImage(id, category))
 
 
+
                 res.films.length && setPersonFilms(res.films)
 
                 setErrorApi(false)
@@ -127,6 +129,7 @@ const PersonPage = ({setErrorApi, category}) => {
                         personId={personId}
                         personFavorite={personFavorite}
                         setPersonFavorite={setPersonFavorite}
+                        category={category}
                     />
 
                     {personInfo && <PersonInfo personInfo={personInfo} />}

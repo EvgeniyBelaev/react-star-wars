@@ -12,7 +12,8 @@ const PersonPhoto = ({
     personName,
     personId,
     personFavorite,
-    setPersonFavorite
+    setPersonFavorite,
+    category
 }) => {
     const dispatch = useDispatch()
 
@@ -24,7 +25,8 @@ const PersonPhoto = ({
             dispatch(setPersonToFavorite({
                 [personId]: {
                     name: personName,
-                    img: personPhoto
+                    img: personPhoto,
+                    category: category
                 }
             }))
             setPersonFavorite(true)
@@ -32,7 +34,7 @@ const PersonPhoto = ({
     }
     return (
         <>
-            <div className={style.container}>
+            <div className={style.container} data-category={category}>
                 <img className={style.photo} src={personPhoto} alt={personName} />
                 <img 
                     src={personFavorite ? iconFavoriteFill : iconFavorite} 
@@ -53,7 +55,8 @@ PersonPhoto.propTypes = {
     personName: PropTypes.string,
     personId: PropTypes.string,
     personFavorite: PropTypes.bool,
-    setPersonFavorite: PropTypes.func
+    setPersonFavorite: PropTypes.func,
+    category: PropTypes.string
 }
 
 

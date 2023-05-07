@@ -7,6 +7,7 @@ import style from './FavoritesPage.module.css';
 
 const FavoritesPage = () => {
     const [people, setPeople] = useState([])
+    const [favoriteList, setFavotiteList] = useState(false)
 
     const storeData = useSelector(state => state.favoriteReducer)
 
@@ -22,15 +23,17 @@ const FavoritesPage = () => {
             })
 
             setPeople(res)
+            setFavotiteList(true)
         }
+        
     }, [])
 
-    
+
     return (
         <>
             <h1 className='header__text'>Favorite Page</h1>
             {people.length
-                ? <PepleList people={people} />
+                ? <PepleList people={people} favoriteList={favoriteList} />
                 : <h2 className={style.comment}>No data</h2>
             }
             
