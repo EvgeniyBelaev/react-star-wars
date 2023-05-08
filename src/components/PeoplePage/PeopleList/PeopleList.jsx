@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import style from './PeopleList.module.css';
 
 const PeopleList = ({people, category, favoriteList}) => {
-    console.log(people[0].category)
 
     if (!favoriteList) {
         return (

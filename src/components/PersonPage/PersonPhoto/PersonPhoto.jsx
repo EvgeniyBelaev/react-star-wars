@@ -32,6 +32,7 @@ const PersonPhoto = ({
             setPersonFavorite(true)
         }
     }
+
     return (
         <>
             <div className={style.container} data-category={category}>

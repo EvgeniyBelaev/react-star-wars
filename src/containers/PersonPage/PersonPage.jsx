@@ -106,6 +106,7 @@ const PersonPage = ({setErrorApi, category}) => {
 
 
 
+
                 res.films.length && setPersonFilms(res.films)
 
                 setErrorApi(false)
@@ -114,6 +115,7 @@ const PersonPage = ({setErrorApi, category}) => {
             }
         })()
     }, [])
+
 
     return (
         <>

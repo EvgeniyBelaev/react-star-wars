@@ -27,6 +27,7 @@ const getId = (url, category) => {
 export const getPeopleId = (url, category) => getId(url, `${category}`)
 
 export const getPeopleImage = (id, category) =>{ 
+
     if (category === 'people') {
         return `${URL_IMG_PERSON}/${id + GUIDE_IMG_EXTENSION}`
     } else {
