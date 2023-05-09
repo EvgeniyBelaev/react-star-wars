@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import routesConfig from '@routes/routesConfig'
 import Header from '@components/Header';
-import CATEGOTY_LIST from '@constants/api'
+
 
 
 import style from './App.module.css';
