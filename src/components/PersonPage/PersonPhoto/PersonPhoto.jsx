@@ -33,9 +33,10 @@ const PersonPhoto = ({
         }
     }
 
+
     return (
         <>
-            <div className={style.container} data-category={category}>
+            <div className={style.container}>
                 <img className={style.photo} src={personPhoto} alt={personName} />
                 <img 
                     src={personFavorite ? iconFavoriteFill : iconFavorite} 
