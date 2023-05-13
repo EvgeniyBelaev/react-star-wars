@@ -22,14 +22,6 @@ const routesConfig =[
         element: <PersonPage/>
     },
     {
-        path: '/starships',
-        element: <StarshipsPage/>
-    },
-    // {
-    //     path: '/starships/:id',
-    //     element: <StarshipPage/>
-    // },
-    {
         path: '/favorites',
         element: <FavoritesPage/>
     },
